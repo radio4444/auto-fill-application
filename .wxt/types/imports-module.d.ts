@@ -18,4 +18,6 @@ declare module '#imports' {
   export { InvalidMatchPattern, MatchPattern } from 'wxt/utils/match-patterns';
   export { useState, useCallback, useMemo, useEffect, useRef, useContext, useReducer } from 'react';
   export { fakeBrowser } from 'wxt/testing';
+  export { default as Button } from '../components/Button';
+  export { default as InputField } from '../components/InputField';
 }
