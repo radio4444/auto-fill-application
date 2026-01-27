@@ -6,6 +6,8 @@ declare global {
   const InputField: typeof import('D:/01 Projects/auto-fill-application/components/InputField').default
   const InvalidMatchPattern: typeof import('wxt/utils/match-patterns').InvalidMatchPattern
   const MatchPattern: typeof import('wxt/utils/match-patterns').MatchPattern
+  const ProfileItem: typeof import('D:/01 Projects/auto-fill-application/components/ProfileItem').default
+  const SelectProfile: typeof import('D:/01 Projects/auto-fill-application/components/SelectProfile').default
   const browser: typeof import('wxt/browser').browser
   const createIframeUi: typeof import('wxt/utils/content-script-ui/iframe').createIframeUi
   const createIntegratedUi: typeof import('wxt/utils/content-script-ui/integrated').createIntegratedUi
@@ -15,6 +17,7 @@ declare global {
   const defineContentScript: typeof import('wxt/utils/define-content-script').defineContentScript
   const defineUnlistedScript: typeof import('wxt/utils/define-unlisted-script').defineUnlistedScript
   const defineWxtPlugin: typeof import('wxt/utils/define-wxt-plugin').defineWxtPlugin
+  const dummyTest: typeof import('D:/01 Projects/auto-fill-application/components/dummyTest').default
   const fakeBrowser: typeof import('wxt/testing').fakeBrowser
   const injectScript: typeof import('wxt/utils/inject-script').injectScript
   const storage: typeof import('wxt/utils/storage').storage

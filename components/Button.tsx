@@ -1,21 +1,19 @@
-// I created button component
 import { cn } from "@/libs/utils";
 import { ComponentPropsWithoutRef, ReactNode } from "react";
+import {Trash2} from "lucide-react"
 
 interface ButtonProps extends ComponentPropsWithoutRef<"button"> {
-  /** * Inherits all standard HTML button attributes while 
-   * adding custom styling variants. 
+  /** * Inherits all standard HTML button attributes while
+   * adding custom styling variants.
    */
-  variant?: "primary" | "secondary" | "danger" ;
+  variant?: "primary" | "secondary";
+  className?: string;
   children: ReactNode;
 }
 
-const sharedStyle = "text-[#000000] active:scale-95"
-
 const variantStyles = {
-  primary: `${sharedStyle} bg-[#5F5E59] hover:bg-[#494A47] active:bg-[#A4A5A3]`,
-  secondary: `${sharedStyle} bg-[#2383E2] hover:bg-[#1C69B5] active:bg-[#89A1B8]`,
-  danger: `${sharedStyle} bg-[#5F5E59] text-[#FF0000] hover:bg-[#494A47] active:bg-[#A4A5A3]`
+  primary: "primary-style",
+  secondary: "secondary-style",
 };
 
 export default function Button({
@@ -28,9 +26,9 @@ export default function Button({
     <button
       className={cn(
         //Remember, cn() is a function. It takes a list of strings and combines them
-        "rounded-lg p-2.5 font-[Segoe_UI] text-[24px]/[30px] font-semibold w-full",
+        "rounded-lg p-2.5 subheading3 active:scale-95",
         variantStyles[variant],
-        className
+        className,
       )}
       {...props}
     >
@@ -59,3 +57,4 @@ export default function Button({
  * | Black          | #000000  | black          |
  * | Red            | #FF0000  | red-600        |
  */
+

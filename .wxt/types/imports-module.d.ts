@@ -20,4 +20,7 @@ declare module '#imports' {
   export { fakeBrowser } from 'wxt/testing';
   export { default as Button } from '../components/Button';
   export { default as InputField } from '../components/InputField';
+  export { default as ProfileItem } from '../components/ProfileItem';
+  export { default as SelectProfile } from '../components/SelectProfile';
+  export { default as dummyTest } from '../components/dummyTest';
 }

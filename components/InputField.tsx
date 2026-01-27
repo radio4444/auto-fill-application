@@ -31,7 +31,7 @@ function InputField({
       <label
         htmlFor={id}
         className={cn(
-          "rounded-lg font-[Segoe_UI] text-[24px]/[30px] text-[#000000] font-semibold transition",
+          "rounded-lg subheading3",
           labelClassName
         )}
       >
@@ -44,7 +44,7 @@ function InputField({
         name={name}
         autoComplete="on"
         className={cn(
-          "rounded-lg p-2.5 font-[Segoe_UI] text-[16px]/[24px] text-[#F0EFED] font-semibold border-2 border-[#262626] focus:outline-none focus:border focus:border-[#2383E2]",
+          "rounded-lg p-2.5 body border-2 border-[#262626] focus:outline-none focus:border focus:border-[#2383E2]",
           inputClassName
         )}
         {...props}

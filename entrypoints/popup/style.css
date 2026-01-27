@@ -1,1 +1,17 @@
 @import "tailwindcss";
+
+@utility subheading3 {
+  @apply font-[Segoe_UI] font-semibold text-[24px]/[30px];
+}
+
+@utility body {
+  @apply font-[Segoe_UI] font-normal text-[16px]/[24px] text-[#F0EFED];
+}
+
+@utility primary-style {
+  @apply bg-[#5F5E59] hover:bg-[#494A47] active:bg-[#A4A5A3] border-[#262626] border-2 border-solid;
+}
+
+@utility secondary-style {
+  @apply bg-[#2383E2] hover:bg-[#1C69B5] active:bg-[#89A1B8] border-[#262626] border-2 border-solid;
+}
