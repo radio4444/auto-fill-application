@@ -1,10 +1,25 @@
 import { cn } from "@/libs/utils";
 import ProfileItem from "./ProfileItem";
 import { ChevronRight } from "lucide-react";
+import { profileStorage, StorageActions } from "@/libs/storage";
+import { useState, useEffect } from "react";
+import { userProfile } from "@/types";
+
 
 function SelectProfile() {
   //initiliaze toggle: false = close, true = open
   const [isOpen, setisOpen] = useState(false);
+  const [profiles, setProfiles] = useState<userProfile[]>([])
+
+  useEffect(()=> {
+    profileStorage.getValue().then(setProfiles)
+
+    const unwatch = profileStorage.watch((newValue)=> {
+      setProfiles(newValue ?? [])
+    })
+
+    return () => unwatch()
+  }, [])
 
   // define toggle event handler: let's user close/open dropdown
   const toggle = () => {
@@ -29,14 +44,21 @@ function SelectProfile() {
       </Button>
       <div className={cn("flex flex-col")}>
         {isOpen &&
-          mockProfile.map((eachProfile) => (
+          profiles.map((eachProfile) => (
             <ProfileItem
-              key={eachProfile}
-              profile={eachProfile}
+              key={eachProfile.id}
+              profile={eachProfile.profileName}
               onEdit={() => console.log("Edit", eachProfile)}
-              onDelete={() => console.log("Delete", eachProfile)}
+              onDelete={() => StorageActions.deleteProfile(eachProfile.id)}
             />
-          ))}
+          ))
+            
+        }
+
+        {isOpen && profiles.length === 0 && (
+          <p className="text-gray-500 text-center text-sm">No Profiles found</p>
+        )}
+        
       </div>
     </div>
   );

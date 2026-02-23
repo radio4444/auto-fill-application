@@ -1,9 +1,8 @@
 import { cn } from "@/libs/utils";
 import { ComponentPropsWithoutRef, ReactNode } from "react";
-import {Trash2} from "lucide-react"
 
 interface ButtonProps extends ComponentPropsWithoutRef<"button"> {
-  /** * Inherits all standard HTML button attributes while
+  /** * Inherits all standard HTML button attributes (ButtonHTMLAttributes) while
    * adding custom styling variants.
    */
   variant?: "primary" | "secondary";
